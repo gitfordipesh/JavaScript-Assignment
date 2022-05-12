@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Form</title>
+    <script>
+        function emailValidate() {
+            var emailId = document.getElementById("emailId").value;
+            var regex = /^\w+([-.]?\w+)*@\w+([-.]?\w+)*\.\w+([-.]\w+)*$/;
+            if (regex.test(emailId)) {
+                document.getElementById("e1").innerText = " ";
+            }
+            else {
+                document.getElementById("e1").style.color = "red";
+                document.getElementById("e1").innerText = "Incorrect Email Id ";
+            }
+        }
+        function passValidate() {
+            var pass = document.getElementById("pass").value;
+            var cpass = document.getElementById("cpass").value;
+            if (pass == cpass) {
+                document.getElementById("e2").innerText = " ";
+            }
+            else {
+                document.getElementById("e2").style.color = "red";
+                document.getElementById("e2").innerText = "Password Mismatch ";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="f" faction="#">
+        First Name: <input type="text" id="fname" required><br>
+        Last Name: <input type="text" id="lname" required><br>
+        Email Address: <input type="text" id="emailId" onkeyup="emailValidate()" required>
+        <!-- onkeyup - event occurs when the user releases a key (from the keyboard). -->
+        <p id="e1"> </p>
+        Password: <input type="password" id="pass" required><br>
+        Confirm Password: <input type="password" id="cpass" onkeyup="passValidate()" required><br>
+        <p id="e2"> </p><br>
+        <input type="submit">
+        <input type="reset"><br>
+    </form>
+</body>
+</html>

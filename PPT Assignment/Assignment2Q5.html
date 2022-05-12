@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Last 3 Characters To The Start.</title>
+    <script>
+        /* slice(start-index,end-index) end always till index-1*/
+        function moveString(str){
+            if(str.length>1){
+                return str.slice(-3)+str.slice(0,-3);//using -ve values for backward indexing 
+            }
+        }
+        var s=prompt("Enter String:");
+        document.write(s+"<br/>");
+        document.write(moveString(s)+"<br/>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
